@@ -1,0 +1,27 @@
+CREATE TABLE book(
+ id serial PRIMARY KEY,
+ author_id INT NOT NULL REFERENCES authors(id),
+ title VARCHAR (200),
+ category_id REFERENCES category(id)
+);
+
+CREATE TABLE book_mark
+(
+id serial PRIMARY KEY,
+page INT,
+book_id INT NOT NULL REFERENCES book(id)
+);
+
+CREATE TABLE author
+(
+id serial PRIMARY KEY,
+first_name VARCHAR (200),
+second_name VARCHAR (200),
+other_name VARCHAR (200)
+);
+
+CREATE TABLE category
+(
+id serial PRIMARY KEY,
+name_category VARCHAR (150)
+);
