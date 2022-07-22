@@ -1,29 +1,27 @@
 package com.blogspot.nerverid.myLibrary;
 
+import com.blogspot.nerverid.myLibrary.helpers.HelperDownload;
+
 public class CurrentLists {
 	
-	public void checkSource() {
+	private HelperDownload helperDown = new HelperDownload();
+	
+	
+	
+	// проверяет если в temp временный список или нет
+	// По всей видимости проверяет временный файл
+	public Boolean isEmpty() {
 		
+		return true;
 	}
 	
-	public String [][] getTableContent() {
-		String [][] data = {
-				{"Aspring Robert Lynn", "Another Fine Myth", "4"},
-				{"HeadFirst", "Java", "400"}
-		};
-		return data;
-	}
+	//Формирует таблицу подгружает из ресурса
+	public String[][] getTableContent() {
+		return helperDown.getContent();
+	} 
 	
-	public String [] getTableTitle() {
-		String [] columnNames = {"Author", "Title", "bookmark"};
-		return columnNames;		
-	}
-	
-	public void setTableContent() {
-		
-	}
-	
-	public void setTableTitle() {
-		
+	// Подгружает заголовки таблицы из ресурса
+	public String[] getTableTitle() {
+		return helperDown.getTitle();
 	}
 }
